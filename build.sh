@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Build esp8266 development container
+# Build view area container
 
 readonly CURRENT_SCRIPT="$(basename -- ${BASH_SOURCE[0]})"
 readonly CURRENT_DIRECTORY="$(cd "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
