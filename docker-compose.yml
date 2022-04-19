@@ -1,0 +1,28 @@
+version: '3'
+services:
+  drupal:
+    volumes:
+      - drupal:/var/www/html
+    image: drupal:8-apache
+    deploy:
+      mode: replicated
+      replicas: 3
+    ports:
+      - "80"
+    networks:
+      - net
+  postgres:
+    image: postgres:10
+    deploy:
+      mode: replicated
+      replicas: 3
+    environment:
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - $PWD/data=/var/lib/postgresql/data
+    networks:
+      - net
+volumes:
+  drupal:
+networks:
+  net:
